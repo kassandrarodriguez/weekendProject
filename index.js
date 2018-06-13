@@ -4,7 +4,7 @@ function introToHider(){
   console.log(`\n${name}, as the Hider, you must vow to never be discovered.`);
   console.log( "The Seeker will try to find you. Once found, they will try to destroy you.");
   console.log("You are weaker than the Seeker. But you are the stronger runner and hider.\n");
-  console.log("Don't be afraid...");
+  placeholder=readlineSync.question("..Don't be afraid\n\nPress any button to continue...");
   console.log("\nPick the location you will hide in:\n");
 }
 
@@ -14,7 +14,7 @@ function introToSeeker(){
   console.log("Once you find the Hider, you must destroy them.");
   console.log("If they decide to run, they will suceed.");
   console.log("You are stronger than the Hider. But they are stronger at running and hiding.\n");
-  console.log("Seek and destroy!!");
+  placeholder=readlineSync.question("Seek and destroy!!\n\nPress any button to continue...");
   console.log("\nPick the location they must be hiding:\n");
 }
 
@@ -129,7 +129,7 @@ if(typeOfplayer=="both"){
       let locationPc3=locationPc[2];
       let locationPc4=locationPc[3];
       console.log("The Seeker will run out of resources if they don't find you within 4 countries.");
-      console.log("Let's see if they found you:\n");
+      placeholder=readlineSync.question("Let's see if they found you:\n\nPress any button to continue....\n");
       let pointForSeeker=whoWonIfPcSeeker(playerlocationChoice,locationPc1, locationPc2, locationPc3, locationPc4 );
       console.log(`\nYou chosen ${arrayOfCountries[playerlocationChoice]}.`);
       console.log(`The Seeker looked in ${arrayOfCountries[locationPc1]}, ${arrayOfCountries[locationPc2]}, ${arrayOfCountries[locationPc3]}, ${arrayOfCountries[locationPc4]}.`);
@@ -145,7 +145,7 @@ if(typeOfplayer=="both"){
           console.log("Your not strong enough to win the fight");
           console.log("You broke your vow to never be discovered and got distroyed.");
         }else{
-          console.log("Since you decided to choose neither one or two");
+          console.log("\nSince you decided to choose neither one or two");
           console.log("I will choose for you!");
           console.log("\nGet ready to fight!\n");
           console.log("That was not smart of you...");
