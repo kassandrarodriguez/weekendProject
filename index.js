@@ -4,7 +4,7 @@ function introToHider(){
   console.log(`\n${name}, as the Hider, you must vow to never be discovered.`);
   console.log( "The Seeker will try to find you. Once found, they will try to destroy you.");
   console.log("You are weaker than the Seeker. But you are the stronger runner and hider.\n");
-  placeholder=readlineSync.question("..Don't be afraid\n\nPress any button to continue...");
+  placeholder=readlineSync.question("..Don't be afraid\n\nPress the 'enter' button to continue...");
   console.log("\nPick the location you will hide in:\n");
 }
 
@@ -14,7 +14,7 @@ function introToSeeker(){
   console.log("Once you find the Hider, you must destroy them.");
   console.log("If they decide to run, they will suceed.");
   console.log("You are stronger than the Hider. But they are stronger at running and hiding.\n");
-  placeholder=readlineSync.question("Seek and destroy!!\n\nPress any button to continue...");
+  placeholder=readlineSync.question("Seek and destroy!!\n\nPress the 'enter' button to continue...");
   console.log("\nPick the location they must be hiding:\n");
 }
 
@@ -44,11 +44,19 @@ function locationMenu(){
 
 }
 
+function makeRandom(){
+
+  return Math.floor(Math.random()*10);
+}
+
 function locationsForPcSeeker(array){
-      let choice1 =Math.floor(Math.random()*10);
-      let choice2=Math.floor(Math.random()*10);
-      let choice3=Math.floor(Math.random()*10);
-      let choice4=Math.floor(Math.random()*10);
+let choice1, choice2, choice3, choice4;
+
+  choice1=makeRandom();
+  choice2=makeRandom();
+  choice3=makeRandom();
+  choice4=makeRandom();
+
       if (checkForDuplicateSeeker(choice1,choice2, choice3, choice4)=== null){
           return locationsForPcSeeker(arrayOfCountries);
         } else {
@@ -130,7 +138,7 @@ if(typeOfplayer=="both"){
       let locationPc3=locationPc[2];
       let locationPc4=locationPc[3];
       console.log("The Seeker will run out of resources if they don't find you within 4 countries.");
-      placeholder=readlineSync.question("Let's see if they found you:\n\nPress any button to continue....\n");
+      placeholder=readlineSync.question("Let's see if they found you:\n\nPress the 'enter' button to continue....\n");
       let pointForSeeker=whoWonIfPcSeeker(playerlocationChoice,locationPc1, locationPc2, locationPc3, locationPc4 );
       console.log(`\nYou chosen ${arrayOfCountries[playerlocationChoice]}.`);
       console.log(`The Seeker looked in ${arrayOfCountries[locationPc1]}, ${arrayOfCountries[locationPc2]}, ${arrayOfCountries[locationPc3]}, ${arrayOfCountries[locationPc4]}.`);
@@ -141,7 +149,7 @@ if(typeOfplayer=="both"){
         if(answer==1){
           console.log("Congratuations! You lived another day");
         } else if(answer==2) {
-          placeholder=readlineSync.question("\nGet ready to fight!\n\nPress any button to continue....\n");
+          placeholder=readlineSync.question("\nGet ready to fight!\n\nPress the 'enter' button to continue....\n");
           console.log("That was not smart of you...");
           console.log("Your not strong enough to win the fight");
           console.log("You broke your vow to never be discovered and got distroyed.");
@@ -170,7 +178,7 @@ if(typeOfplayer=="both"){
         console.log("You found the Hider!!");
         console.log(`The Hider was actually hiding in ${arrayOfCountries[locationPcHider]}`);
         let pcRunOrFight=runOrFight();
-        placeholder=readlineSync.question("Will the Hider choose to run or fight??\nPress any button to continue....\n");
+        placeholder=readlineSync.question("Will the Hider choose to run or fight??\nPress the 'enter' button to continue....\n");
           if(pcRunOrFight==0){
             console.log("Better luck next time.The Hider ran. Great job finding the Hider though")
           } else{
