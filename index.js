@@ -21,7 +21,6 @@ function introToSeeker(){
 
 function locationMenu(){
   let playerlocationChoice=false;
-
   while(playerlocationChoice==false){
     console.log("Select 0 for: USA");
     console.log("Select 1 for: Italy");
@@ -56,7 +55,7 @@ function locationsForPcSeeker(array){
           return[choice1, choice2, choice3, choice4];
         }
 
-}
+    }
 
   function checkForDuplicateSeeker(one, two, three, four){
 
@@ -81,16 +80,16 @@ function locationsForPcSeeker(array){
 
 }
 
-  let locationsForPcHider =(array)=>{
+    function locationsForPcHider(array){
       let choice =Math.floor(Math.random()*10);
 
-        return choice;
-      }
+            return choice;
+    }
 
-function runOrFight(){
-  let pcRunOrFight =Math.floor(Math.random()*2);
-  return pcRunOrFight;
-}
+      function runOrFight(){
+        let pcRunOrFight =Math.floor(Math.random()*2);
+        return pcRunOrFight;
+      }
 
 
 ///Where the program actually begins
@@ -187,7 +186,10 @@ if(typeOfplayer=="both"){
         console.log(`You chosen ${arrayOfCountries[playerlocationChoice]}\n`);
         console.log("You didn't find the Hider. Look again:\n");
       }
+      if(i==3){
+        console.log(`You chosen ${arrayOfCountries[playerlocationChoice]}\n`);
 
+      }
 
     }
     if(playerlocationChoice != locationPcHider){
