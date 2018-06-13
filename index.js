@@ -99,6 +99,7 @@ let typeOfplayer;
 let playerlocationChoice;
 let arrayOfCountries = ['USA', 'Italy', 'France', 'Japan', 'Germany', 'Brazil', 'Canada', 'China', 'Australia','Iceland'];
 let placeholder;
+let chances;
 
 
 
@@ -140,7 +141,7 @@ if(typeOfplayer=="both"){
         if(answer==1){
           console.log("Congratuations! You lived another day");
         } else if(answer==2) {
-          placeholder=readlineSync.question("Get ready to fight!\n\nPress any button to continue....\n");
+          placeholder=readlineSync.question("\nGet ready to fight!\n\nPress any button to continue....\n");
           console.log("That was not smart of you...");
           console.log("Your not strong enough to win the fight");
           console.log("You broke your vow to never be discovered and got distroyed.");
@@ -162,7 +163,7 @@ if(typeOfplayer=="both"){
     let locationPcHider=locationsForPcHider(arrayOfCountries);
     console.log("You will run out of resources if you don't find the hider within 4 countries.\n");
     console.log("Make your guess count!!\n");
-    for(let i=0; i<=3; i++){
+    for(let i=1; i<5; i++){
       playerlocationChoice=locationMenu();
       if (playerlocationChoice==locationPcHider) {
         console.log(`You chosen ${arrayOfCountries[playerlocationChoice]}\n`);
@@ -181,11 +182,13 @@ if(typeOfplayer=="both"){
           break;
 
         }
-        if (i !=3) {
+        if (i !=4) {
         console.log(`You chosen ${arrayOfCountries[playerlocationChoice]}\n`);
-        console.log("You didn't find the Hider. Look again:\n");
+        console.log("You didn't find the Hider. Look again:");
+        chances= 4-i;
+        console.log(`You have ${chances} more left\n`);
       }
-      if(i==3){
+      if(i==4){
         console.log(`You chosen ${arrayOfCountries[playerlocationChoice]}\n`);
 
       }
