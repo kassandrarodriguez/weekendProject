@@ -37,7 +37,7 @@ function locationMenu(){
         return playerlocationChoice;
     } else{
       console.log("\nYou didn't appropriately select a country!");
-      console.log("Pick again!");
+      console.log("Pick again!\n");
       playerlocationChoice=false;
     }
   }
@@ -98,6 +98,7 @@ let name;
 let typeOfplayer;
 let playerlocationChoice;
 let arrayOfCountries = ['USA', 'Italy', 'France', 'Japan', 'Germany', 'Brazil', 'Canada', 'China', 'Australia','Iceland'];
+let placeholder;
 
 
 
@@ -139,7 +140,7 @@ if(typeOfplayer=="both"){
         if(answer==1){
           console.log("Congratuations! You lived another day");
         } else if(answer==2) {
-          console.log("\nGet ready to fight!\n");
+          placeholder=readlineSync.question("Get ready to fight!\n\nPress any button to continue....\n");
           console.log("That was not smart of you...");
           console.log("Your not strong enough to win the fight");
           console.log("You broke your vow to never be discovered and got distroyed.");
@@ -161,18 +162,16 @@ if(typeOfplayer=="both"){
     let locationPcHider=locationsForPcHider(arrayOfCountries);
     console.log("You will run out of resources if you don't find the hider within 4 countries.\n");
     console.log("Make your guess count!!\n");
-
-
     for(let i=0; i<=3; i++){
       playerlocationChoice=locationMenu();
       if (playerlocationChoice==locationPcHider) {
         console.log(`You chosen ${arrayOfCountries[playerlocationChoice]}\n`);
         console.log("You found the Hider!!");
         console.log(`The Hider was actually hiding in ${arrayOfCountries[locationPcHider]}`);
-        console.log("Will the Hider choose to run or fight??\n");
         let pcRunOrFight=runOrFight();
+        placeholder=readlineSync.question("Will the Hider choose to run or fight??\nPress any button to continue....\n");
           if(pcRunOrFight==0){
-            console.log("Better luck next time.The Hider ran. Great job finding the Hider tho...")
+            console.log("Better luck next time.The Hider ran. Great job finding the Hider though")
           } else{
             console.log("The Hider decided to fight!\n");
             console.log("That was not smart of the Hider!");
