@@ -21,7 +21,7 @@ function introToSeeker(){
 
 function locationMenu(){
   let playerlocationChoice=false;
-  while(playerlocationChoice==false){
+  while(playerlocationChoice===false){
     console.log("Select 0 for: USA");
     console.log("Select 1 for: Italy");
     console.log("Select 2 for: France");
