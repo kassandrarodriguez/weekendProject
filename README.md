@@ -1,4 +1,4 @@
-# weekendProject
+# WeekendProject
 A game made in javaScript  
 The game is called "Hider or Seeker"  
 This game is ultimately a game of luck.
